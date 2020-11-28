@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>ÚLTIMOS FILMES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+ <ion-content padding>
+   
+<!--
+  <ion-item>
+    <ion-label position="stacked" color="secondary">Pequisar pelo nome:</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  
+  <ion-button expand="block" (click)= "search()">Buscar</ion-button> --> 
+
+  <ion-grid text-center *ngFor="let movie of list_movies">
+    <ion-row>
+      <ion-col> Título: {{ movie.original_title }}</ion-col>
+    </ion-row>
+
+    <ion-row>
+     <ion-col>
+        <img src = "https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Poster do filme"> 
+     </ion-col> 
+    </ion-row>
+
+    <ion-row>
+      <ion-col> <p>Data de lançamento: {{movie.release_date}}</p></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col> <p> Resumo: {{movie.overview}} </p></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col> <p> Tempo de duração: {{movie.runtime}} minutos</p></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col> <p> Linguagem original: {{movie.original_language}} </p></ion-col>
+      <ion-col> <p> Média da pontuação: {{movie.vote_average}} </p></ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>
